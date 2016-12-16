@@ -1,0 +1,25 @@
+{
+  "name": "frametrap",
+  "version": "1.0.0",
+  "description": "frame data analyzer for sf5",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "dev": "webpack -d --watch",
+    "build": "webpack -p"
+  },
+  "author": "David Bisrat",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-redux": "^4.4.6"
+  },
+  "devDependencies": {
+    "babel-core": "^6.20.0",
+    "babel-loader": "^6.2.9",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "webpack": "^1.14.0"
+  }
+}

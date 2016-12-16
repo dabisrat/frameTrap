@@ -1,0 +1,6 @@
+node_modules
+build
+char_pic
+.DS_Store
+src/client/styles/assets/img/char_pic/*
+src/client/build/*
