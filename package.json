@@ -12,11 +12,14 @@
   "author": "David Bisrat",
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^3.4.7",
     "body-parser": "^1.15.2",
+    "cheerio": "latest",
     "express": "^4.14.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
-    "react-redux": "^4.4.6"
+    "react-redux": "^4.4.6",
+    "request": "^2.79.0"
   },
   "devDependencies": {
     "babel-core": "^6.20.0",
