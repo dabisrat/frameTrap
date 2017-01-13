@@ -16,18 +16,23 @@ module.exports = function () {
   ];
   characters.forEach(function (character) {
     var charURL = 'http://wiki.shoryuken.com/Street_Fighter_V/' + character;
-    var dirPath = path.resolve('src/server/frameData/' + character + 'FrameData.html');
+    var dirPath = path.resolve('src/server/frameData/' + character + '.html');
     promisifyRequest(charURL)
       .then(function (content) {
-        promisifyWriteFile(dirPath, content.body);
+        promisifyWriteFile(dirPath, getFrameData(content.body));
       })
       .catch(function (err){
         if (err) {
           throw new Error (err);
         }
       });
-      console.log( character + ' frameData saved');
+      //console.log( character + ' frameData saved');
   });
+
+  function getFrameData (html) {
+    var $ = cheerio.load(html);
+    return $('.wikitable')
+  }
 }
 // ___________________________________________________________________________________________________________
 
