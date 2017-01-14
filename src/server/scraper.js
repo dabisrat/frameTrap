@@ -22,9 +22,7 @@ module.exports = function () {
         promisifyWriteFile(dirPath, getFrameData(content.body));
       })
       .catch(function (err){
-        if (err) {
-          throw new Error (err);
-        }
+        if (err) { throw new Error (err) }
       });
       //console.log( character + ' frameData saved');
   });
