@@ -1,27 +1,50 @@
 import React from 'react';
+console.log(window.innerWidth, window.innerHeight)
 
 export default class CharIcon extends React.Component {
   constructor(props){
     super(props)
     this.state = {
-     player1Select:'',
-     player2Select:''
+     player1Select:false,
+     player2Select:false
     }
   }
-  playerSelected() {
-    const playerState = this.props.helperFn.getPlayerState()
-    console.log(playerState)
-    if (!playerState.player1) {
-      this.setState({player1Select: 'player1Select'});
-      this.props.helperFn.setPlayerSelect('player1', true)
-      this.props.helperFn.setPlayerSelect('leftName', this.props.character.name)
-    } else if (!playerState.player2) {
-      this.setState({player2Select: 'player2Select'});
-      this.props.helperFn.setPlayerSelect('player2', true)
-      this.props.helperFn.setPlayerSelect('rightName', this.props.character.name)
+  handleClick(e) {
+    // when the user clicks on this component  a class should be applied
+    // the top level state should be updated.
+    const {player1, player2} = this.props.playerState.get()
+    if (!player1) {
+      this.setState({player1Select:true});
+      this.props.playerState.set('player1', true)
+      this.props.playerState.set('leftName', this.props.character.name)
+    } else if (!player2) {
+      this.setState({player2Select: true});
+      this.props.playerState.set('player2', true)
+      this.props.playerState.set('rightName', this.props.character.name)
       // move to the the data page
     } else {
       console.log("only two can tango")
+    }
+  }
+  isSelected() {
+    if (this.state.player1Select && this.state.player2Select) {
+      return 'player-1-selected player-2-selected'
+    }
+    if (this.state.player1Select) {
+      return 'player-1-selected'
+    }
+    if (this.state.player2Select) {
+      return 'player-2-selected'
+    }  
+  }
+  handleMouseEvent(e){
+    let {player1,player2} = this.props.playerState.get();
+    let mouseOver = (trueState, falseState) => e.type === 'mouseenter' ? this.setState(trueState) : this.setState(falseState);
+    if (!player1) {
+      return mouseOver({player1Select:true},{player1Select:false})
+    }
+    if (!player2) {
+      return mouseOver({player2Select:true}, {player2Select:false})
     }
   }
 
@@ -29,13 +52,22 @@ export default class CharIcon extends React.Component {
     return (
       <div 
         className={`
-          ${this.props.character.side}_char_container 
-          ${this.state.player1Select} 
-          ${this.state.player2Select}`} 
-          onClick={this.playerSelected.bind(this)}>
+          image-container
+          ${this.props.character.name ==='null'? 
+            'hidden' : this.props.character.side + '-image-container'
+          }
+          ${this.isSelected()}
+          `} 
+          onClick={this.handleClick.bind(this)}
+          onMouseEnter={this.handleMouseEvent.bind(this)}
+          onMouseLeave={this.handleMouseEvent.bind(this)}>
         <img 
-          className={`${this.props.character.side}_image ${this.props.character.name}`}
-          src= {`styles/assets/img/char_icons/${this.props.character.name}.jpg`}/>          
+          className={`
+          char-image
+          ${this.props.character.side}-image 
+          ${this.props.character.name}`}
+          //this path is realative to the index page or the bundel.js
+          src= {`src/client/styles/assets/img/char_icons/${this.props.character.name}.jpg`}/>
       </div>
     )
   }

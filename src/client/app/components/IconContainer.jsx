@@ -1,27 +1,16 @@
 import React from 'react'
 import CharIcon from './CharIcon.jsx'
-export default ({Characters, Side, HelperFn}) => {
+export default ({characters, side, row, playerState}) => {
   
-  const row1Characters = Characters.filter( (character) =>{
-    return character.side === Side && character.row === 1
+  const rowOfCharacters = characters.filter( (character) =>{
+    return character.side === side && character.row === row
   }).map((character) => {
-    return <CharIcon character={character} helperFn={HelperFn} />
-  });
-
-  const row2Characters = Characters.filter( (character) =>{
-    return character.side === Side && character.row === 2
-  }).map((character) => {
-    return <CharIcon character={character} helperFn={HelperFn}/>
+    return <CharIcon character={character} playerState={playerState} />
   });
 
   return(
-    <div className={`iconContainer${Side}`}> 
-      <div className ={`row1`}> 
-        {row1Characters}
+      <div className ={`row-container row-${side} row-${row}`}> 
+        {rowOfCharacters}
       </div>
-      <div className ={`row2`}> 
-        {row2Characters}
-      </div> 
-    </div>
   )
 }
