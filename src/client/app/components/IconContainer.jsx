@@ -9,7 +9,7 @@ export default ({characters, side, row, playerState}) => {
   });
 
   return(
-      <div className ={`row-container row-${side} row-${row}`}> 
+      <div className ={`row-container row-${side} row-${row}`} > 
         {rowOfCharacters}
       </div>
   )

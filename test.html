@@ -7,46 +7,46 @@
   <title>Document</title>
 </head>
 <body>
-<div class="row">
-    <div class= 'frame'>
-  <img src="https://photos-1.dropbox.com/t/2/AAAXP2VNF66PMT760mrXLmh0A9r77XRuhDOxjJRMAa5WlQ/12/93971233/jpeg/32x32/1/_/1/2/Ryu.jpg/EPLG_EgY8AEgAigC/ZsdZDE2D3M9aASKG1TOvOpLDprlaW528KGjp90ZMUEw?size=1280x960&size_mode=3" alt="" />
+
+ <!--<a class="stretchy no-limit" href="#">
+  <img class="spacer" alt="" src="http://tobyj.net/responsive-sprites/spacer.png">
+  <img class="sprite" alt="icon" src="http://tobyj.net/responsive-sprites/sprite_800x160.jpg">
+</a>
+<a class="stretchy s2" href="#">
+  <img class="spacer" alt="" src="http://tobyj.net/responsive-sprites/spacer.png">
+  <img class="sprite" alt="icon" src="http://tobyj.net/responsive-sprites/sprite_800x160.jpg">
+</a>-->
+<!--<a class="stretchy s3" href="#">
+  <img class="spacer" alt="" src="http://tobyj.net/responsive-sprites/spacer.png">
+  <img class="sprite" alt="icon" src="http://tobyj.net/responsive-sprites/sprite_800x160.jpg">
+</a>-->
+
+<div class='stretchy'>
+  <img class="spacer" src="src/client/styles/assets/img/trans.png" alt="" />
+  <img class="sprite" src="https://photos-5.dropbox.com/t/2/AABVUeZ5CaAv823WWuJnwwbPA9D0UWuGE2hRrZvfKqvivg/12/93971233/png/32x32/1/_/1/2/Screen%20Shot%202017-05-07%20at%202.32.47%20PM.png/EPLG_EgY8gEgAigC/PvvjKneQt-yqAMkG-bmuolmfPqLkXoDGBvL0kNy3Bt0?size=1280x960&size_mode=3" alt="" />
 </div>
-    <div class= 'frame'>
-  <img src="https://photos-1.dropbox.com/t/2/AAAXP2VNF66PMT760mrXLmh0A9r77XRuhDOxjJRMAa5WlQ/12/93971233/jpeg/32x32/1/_/1/2/Ryu.jpg/EPLG_EgY8AEgAigC/ZsdZDE2D3M9aASKG1TOvOpLDprlaW528KGjp90ZMUEw?size=1280x960&size_mode=3" alt="" />
+<div class='stretchy no-limit s2'>
+  <img class="spacer" src="src/client/styles/assets/img/trans.png" alt="" />
+  <img class="sprite" src="https://photos-5.dropbox.com/t/2/AABVUeZ5CaAv823WWuJnwwbPA9D0UWuGE2hRrZvfKqvivg/12/93971233/png/32x32/1/_/1/2/Screen%20Shot%202017-05-07%20at%202.32.47%20PM.png/EPLG_EgY8gEgAigC/PvvjKneQt-yqAMkG-bmuolmfPqLkXoDGBvL0kNy3Bt0?size=1280x960&size_mode=3" alt="" />
 </div>
-    <div class= 'frame'>
-  <img src="https://photos-1.dropbox.com/t/2/AAAXP2VNF66PMT760mrXLmh0A9r77XRuhDOxjJRMAa5WlQ/12/93971233/jpeg/32x32/1/_/1/2/Ryu.jpg/EPLG_EgY8AEgAigC/ZsdZDE2D3M9aASKG1TOvOpLDprlaW528KGjp90ZMUEw?size=1280x960&size_mode=3" alt="" />
-</div>
-  <div class= 'frame'>
-  <img src="https://photos-1.dropbox.com/t/2/AAAXP2VNF66PMT760mrXLmh0A9r77XRuhDOxjJRMAa5WlQ/12/93971233/jpeg/32x32/1/_/1/2/Ryu.jpg/EPLG_EgY8AEgAigC/ZsdZDE2D3M9aASKG1TOvOpLDprlaW528KGjp90ZMUEw?size=1280x960&size_mode=3" alt="" />
-</div>
-</div>
-  
+
 </body>
 
 <style>
-body{
-  width:100%;
-  height: 100%;
+.stretchy {
+  width:35%;
+  float:left; 
+  position:relative; 
+  overflow:hidden; 
+  max-width:320px;
 }
-.row{
-  border: 1px blue dashed;
-  display:flex;
-}
-.frame{
-  display:inline-flex;
-  
-  width:10.5%;
-  /*height:20%;*/
-  transform: skew(31deg);
-  border: 1px green dashed;
-  overflow:hidden;
-}
-img {
-  width:130%;
-  margin-left:-22px ;
-  border: 1px red dashed;
-  transform:skew(-31deg);
-}
+.stretchy .spacer {display:block; width: 100%; height: auto;}
+.stretchy .sprite {position:absolute; top:0px; left:0; max-width:none; max-height:100%;}
+.stretchy.s2 .sprite {top:0%; left:-100%;}
+.stretchy.s3 .sprite {left:-200%;}
+ .stretchy.no-limit {max-width: none;}
+ .stretchy.no-limit .sprite {min-height: 100%;}
 </style>
+
+</script>
 </html>
