@@ -44,10 +44,10 @@ setPlayerSelect(player, value){
     return (
       <div className="Main">
         {makeContainer('left',1)}
-        {makeContainer('left',2)}
+        {makeContainer('right',1)}
         <CharName Side='left' Name={this.state.leftName}/>
 
-        {makeContainer('right',1)}
+        {makeContainer('left',2)}
         {makeContainer('right',2)}
         <CharName Side='right' Name={this.state.rightName}/> 
       </div>

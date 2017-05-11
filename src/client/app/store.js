@@ -69,7 +69,13 @@ export default [
    name:'Guile',
    side:'right',
    row:1
- },{
+ },
+  {
+   name:'null',
+   side:'right',
+   row:1
+ },
+ {
    name:'Mbison',
    side:'right',
    row:2
@@ -90,4 +96,9 @@ export default [
    side:'right',
    row:2
  },
+  {
+   name:'null',
+   side:'right',
+   row:2
+ }
 ]

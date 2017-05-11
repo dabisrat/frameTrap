@@ -49,28 +49,17 @@ export default class CharIcon extends React.Component {
   }
 
   render() {  
-    return (
-      <div 
+    return  <div 
         className={`
           img-container
-          ${this.props.character.name ==='null'? 
-            'hidden' : this.props.character.side + '-image-container'
-          }
+          ${this.props.character.name ==='null' ? `hidden` : this.props.character.name}
+          ${this.props.character.side}
           ${this.isSelected()}
           `} 
           onClick={this.handleClick.bind(this)}
           onMouseEnter={this.handleMouseEvent.bind(this)}
           onMouseLeave={this.handleMouseEvent.bind(this)}
           >
-        <img className="trans" src="src/client/styles/assets/img/trans.png" alt=""/>
-        <img 
-          className={`
-          img-container__img
-          ${this.props.character.side}-image 
-          ${this.props.character.name}`}
-          //this path is realative to the index page or the bundel.js
-          src= {`src/client/styles/assets/img/${this.props.character.side}-character.png`}/>
       </div>
-    )
   }
 };

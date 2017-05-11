@@ -51,7 +51,7 @@ table {
 }
 
 /* set the background image*/
-:root, body{
+html, body {
   width: 100%;
   height:100%;
   background-image: url('./assets/img/mainBG.jpg');
@@ -59,99 +59,133 @@ table {
   background-repeat: no-repeat;
 }
 
-
-@media only screen and (max-width: 740px) {
-.Main{
-  width:100%;
+#app {
   height:100%;
+  width:100%;
 }
 
-  #charSelect{
-    color: white;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    position: relative;
-    top: 40%;
-    left:0;
-    right:0;
-    font-weight: bold;
-    font-size: 100%;
-  }
-  .row-container{
-    position:relative;
-    display:flex;
-    flex-flow: wrap row;
-  }
+#charSelect {
+  color: white;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  position: fixed;
+  top: 40%;
+  left:0;
+  right:0;
+  font-weight: bold;
+  font-size: 250%;
+}
 
-  .img-container {
-    position:absolute; 
-    top:0; 
-    left:0; 
-    max-width:none; 
-    max-height:100%;
-    /*width: 93px;
-    height: 45px;*/
-    /*width:15%;
-    max-width:258px;
-    overflow:hidden;
-    position:relative;
-    margin:0px auto;
-    display:block;*/
-  }
-  /*.trans {
-    width:100%;
-    height:auto;
-    display:block;
-    margin:0;
-    padding:0;
-  }*/
+.Main {
+  position:relative;
+  top: 33%;
+  padding: 0px 10px 0 10px;
+  justify-content: space-between;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: center;
+  border: 1px dashed green;
+  width: 100%;
+  height: 50%;
+}
+.char-container {
+  display:flex;
+  height: 15%;
+  width: 45%
+}
+.left-side-char.row-2-char {
+margin-left:2.3%;
+}
+.right-side-char.row-2-char {
+margin-right:2.3%;
+}
 
-  .img-container img{
-    position:absolute;
-    top:0;
-    max-width:none;
-    max-height:100%;
-    display:block;
-    /*display:block;
-    max-height: 45px; 
-    max-width: 95px;
-    width:50%;
-    object-fit: none;
-    object-position: 0 0;*/
-  }
-  .row-container img.left {
-    transform: skew(33deg);
-    left:-100%;
-    /*object-position: -465px 0;*/
-  }
-  .row-container img.right {
-    transform: skew(-33deg);
-  }
-  
-  /*.row-1{
-    border: red dashed 1px;
-    top:50%; 
-  }
-  .row-2{
-    top:57%;
-  }
-  .row-left {
-    left:2%;
-  }
-  .row-left.row-2{
-    border:white dashed 1px;
-    left:4%;
-  }
 
-  .row-right{
-    border: blue dashed 1px;
-    left:57%;
-  }
+.img-container {
+  cursor:pointer;
+  background-size: 600% 200%;
+  background-repeat: no-repeat;
+  border:red 1px dashed;
+   height:100%;
+   width:100%; 
+}
 
-  .row-right.row-2{
-    border:yellow dashed 1px;
-    left:55%;
-  }*/
+
+.left{
+  background-position: 20% 0;
+  transform:skew(32deg);
+  background-image: url("./assets/img/left-character.png");
+}
+.right{
+  background-position: 0 0;
+  transform:skew(-32deg);
+  background-image: url("./assets/img/right-character.png");
+}
+
+.Ryu {
+  background-position: 100% 0;
+}
+
+.Chun {
+  background-position: 80% 0;
+}
+
+.Rmika {
+  background-position: 60% 0;
+}
+
+.Rashid {
+  background-position: 40% 0;
+}
+
+.Nash{
+  background-position: 100% 100%;
+}
+.Karin{
+  background-position: 80% 100%;
+}
+.Zangief{
+  background-position: 60% 100%;
+}
+.Laura{
+  background-position: 40% 100%;
+}
+.Ibuki{
+  background-position: 20% 100%;
+}
+.Juri{
+  background-position: 0% 100%;
+}
+
+.Cammy {
+  background-position: 24% 0;
+}
+.Vega {
+  background-position: 48% 0;
+}
+.Nacalli {
+  background-position: 72% 0;
+}
+.Guile {
+  background-position: 96% 0;
+}
+
+.Mbison{
+  background-position: 0% 100%;
+}
+.Birdie{
+  background-position: 24% 100%;
+}
+.Sim{
+  background-position: 48% 100%;
+}
+.Fang{
+  background-position: 72% 100%;
+}
+.Balrog{
+  background-position: 96% 100%;
+}
+
 
   /* dynamic class set on click*/
   .player-1-selected {
@@ -159,14 +193,14 @@ table {
     z-index: 3;
     border-top: 5px solid blue;
     border-left: 5px solid blue;
-    opacity:.8;
+    opacity:.9;
   }
   .player-2-selected {
     position:relative;
     z-index: 3;
     border-bottom: 5px solid red;
     border-right: 5px solid red;
-    opacity:.8;
+    opacity:.9;
   }
   .hidden{
     visibility:hidden;
@@ -191,8 +225,4 @@ table {
   left:54.5%;
   }
 
-} /* end of the 320 - 640 screens  */
-
-@media only screen and (min-width: 640px) {
-
-}
+ /* end of the 320 - 640 screens  */
