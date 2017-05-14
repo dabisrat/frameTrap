@@ -1,9 +1,9 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
-var scraper = require('./scraper');
+// var scraper = require('./scraper');
 var morgan = require('morgan');
-var sanitizer = require('./sanitizer')
+// var sanitizer = require('./sanitizer')
 
 
 const app = express();

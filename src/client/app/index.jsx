@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom';
 import IconContainer from './components/IconContainer.jsx';
 import Characters from './store'
 import CharName from './components/CharName.jsx'
-import '../styles/frametrap.css'
-console.log('it is defeniatly updating and recompiling')
+// import '../styles/frametrap.css'
+import '../styles/frametrap.less'
+
 class App extends React.Component{
   constructor(props){
     super(props)

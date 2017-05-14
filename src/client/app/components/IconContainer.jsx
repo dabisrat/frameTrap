@@ -9,7 +9,8 @@ export default ({characters, side, row, playerState}) => {
   });
 
   return(
-      <div className ={`char-container ${side}-side-char row-${row}-char`} > 
+      // char-container mix in not working the way I expected
+      <div className ={`${side}-side-char row-${row}-char`} > 
         {rowOfCharacters}
       </div>
   )

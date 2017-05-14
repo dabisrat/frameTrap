@@ -51,7 +51,6 @@ export default class CharIcon extends React.Component {
   render() {  
     return  <div 
         className={`
-          img-container
           ${this.props.character.name ==='null' ? `hidden` : this.props.character.name}
           ${this.props.character.side}
           ${this.isSelected()}

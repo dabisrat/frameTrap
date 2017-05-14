@@ -1,5 +1,6 @@
-var webpack = require('webpack');
-var path = require('path')
+const webpack = require('webpack');
+const path = require('path')
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 // the output directory.
 var output = path.resolve(__dirname, 'src/build');
@@ -10,7 +11,8 @@ var config = {
   
   entry: input + '/index.jsx', // starting file
   output: {
-    publicPath: "src/build/",
+    // this casues issues in production eviroment
+    publicPath: "/src/build/",
     path: output,  // output directory
     filename: 'bundle.js', // file that gets created in the output dir after bundling.
   },
@@ -21,25 +23,30 @@ var config = {
         include:input,
         loader:'babel-loader'
       },
-      // if the assests where on a server wold this work as an alternitve to an file loader?
-      // { 
-      //   test: /\.css$/, 
-      //   use:[ 'style-loader', {loader:'css-loader', options: { url: false }}] 
-      // },
-      { 
-        test: /\.css$/, 
-        use:[ 'style-loader', 'css-loader',] 
+      {
+        test: /\.less$/,
+        use: ExtractTextPlugin.extract({
+            use: [ 'css-loader', 'less-loader'],
+            fallback: "style-loader"
+        })
       },
       {
         test:/\.(png|jpg|svg)$/,
         include:assets,
         loader:'url-loader',
         options:{limit:8125}
-      }
+      },
+      { 
+        // test: /\.css$/, 
+        // use: ExtractTextPlugin.extract({
+        //   use: 'css-loader',
+        //   fallback: 'style-loader'
+        // })
+      },
 
     ]
   },
-  devtool: "cheap-eval-source-map"
+  plugins: [new ExtractTextPlugin('style.css')],
 };
 
 module.exports = config;

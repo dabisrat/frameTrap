@@ -1,0 +1,123 @@
+@skew-value: 32deg;
+@p1-color: blue;
+@p2-color: red;
+
+@keyframes blink1 {
+    from {border: 3px dashed white}
+    to {border: 3px dashed @p1-color;}
+}
+@keyframes blink2 {
+    from {border: 3px dashed white}
+    to {border: 3px dashed @p2-color;}
+}
+
+.img-container (){
+  cursor:pointer;
+  background-size: 600% 200%;
+  background-repeat: no-repeat;
+  border:red 1px dashed;
+   height:100%;
+   width:100%; 
+}
+
+.left{
+  .img-container;
+  background-position: 20% 0;
+  transform:skew(@skew-value);
+  background-image: url("./assets/img/left-character.png");
+}
+.right{
+  .img-container;
+  background-position: 0 0;
+  transform:skew(-@skew-value);
+  background-image: url("./assets/img/right-character.png");
+}
+
+.Ryu {
+  background-position: 100% 0;
+}
+
+.Chun {
+  background-position: 80% 0;
+}
+
+.Rmika {
+  background-position: 60% 0;
+}
+
+.Rashid {
+  background-position: 40% 0;
+}
+
+.Nash{
+  background-position: 100% 100%;
+}
+.Karin{
+  background-position: 80% 100%;
+}
+.Zangief{
+  background-position: 60% 100%;
+}
+.Laura{
+  background-position: 40% 100%;
+}
+.Ibuki{
+  background-position: 20% 100%;
+}
+.Juri{
+  background-position: 0% 100%;
+}
+
+.Cammy {
+  background-position: 24% 0;
+}
+.Vega {
+  background-position: 48% 0;
+}
+.Nacalli {
+  background-position: 72% 0;
+}
+.Guile {
+  background-position: 96% 0;
+}
+
+.Mbison{
+  background-position: 0% 100%;
+}
+.Birdie{
+  background-position: 24% 100%;
+}
+.Sim{
+  background-position: 48% 100%;
+}
+.Fang{
+  background-position: 72% 100%;
+}
+.Balrog{
+  background-position: 96% 100%;
+}
+
+.player-1-selected {
+  position:relative;
+  z-index: 3;
+  border-top: 3px solid @p1-color;
+  border-left: 3px solid @p1-color;
+  opacity:.9;  
+  &:hover{
+    animation: blink1 .5s infinite normal;
+  }
+  
+}
+.player-2-selected {
+  position:relative;
+  z-index: 3;
+  border-bottom: 3px solid @p2-color;
+  border-right: 3px solid @p2-color;
+  opacity:.9;
+  &:hover{
+    animation: blink2 .5s infinite normal;
+  }
+}
+.hidden{
+  visibility:hidden;
+}

@@ -1,0 +1,19 @@
+@shift-value: 2.3%;
+.char-container(){
+  display:flex;
+  height: 15%;
+  width: 45%
+}
+.left-side-char{
+  .char-container;
+  &.row-2-char {
+    margin-left:@shift-value;
+  }
+}
+.right-side-char {
+  .char-container;
+  &.row-2-char {
+    margin-right:@shift-value;
+  }
+}
+
