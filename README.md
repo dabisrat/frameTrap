@@ -1,3 +1,4 @@
 # frameTrap
 
-Frame Data analysis tool
+Description:
+Frame Data analysis tool for SFV
